@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Marie ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 20%, #641c62 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #4d123f 0%, transparent 30%),
+        #100718;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+.moon {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #fff2d8;
+    box-shadow: 0 0 60px rgba(255,230,190,.35);
+    top: 70px;
+    right: 8%;
+    opacity: .85;
+    z-index: -1;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    animation: rise 10s linear infinite;
+    opacity: 0;
+    z-index: 5;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    text-align: center;
+}
+
+.small-title {
+    color: #ff9bcf;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+    font-size: clamp(55px, 10vw, 110px);
+}
+
+h2 {
+    font-size: clamp(38px, 7vw, 65px);
+}
+
+p {
+    line-height: 1.9;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+}
+
+.hero-content {
+    animation: heroAppear 2s ease;
+}
+
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ffacd9,
+        #fff,
+        #ff74bd
+    );
+
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+
+.hero-subtitle {
+    max-width: 650px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #ead6e7;
+}
+
+.heart-divider {
+    margin: 30px 0;
+    font-size: 28px;
+    letter-spacing: 15px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 16px 35px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: linear-gradient(
+        135deg,
+        #ff4fa3,
+        #a629a8
+    );
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 30px rgba(255,60,170,.35);
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 45px rgba(255,60,170,.6);
+}
+
+/* =========================
+   GLASS CARDS
+========================= */
+
+.glass {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 30px;
+    padding: 45px;
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.3),
+        inset 0 1px rgba(255,255,255,.08);
+}
+
+.glass p {
+    color: #eadbe8;
+    font-size: 17px;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        rgba(255,180,220,.12),
+        rgba(255,255,255,.04)
+    );
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    font-size: 130px;
+    color: rgba(255,120,190,.05);
+    right: 20px;
+    top: 10px;
+}
+
+.letter h2 {
+    color: #ffacd7;
+    margin-bottom: 25px;
+}
+
+.signature {
+    margin-top: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: #ffb7dc;
+}
+
+/* =========================
+   REASONS
+========================= */
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.reason {
+    padding: 30px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    transition: .4s;
+}
+
+.reason:hover {
+    transform: translateY(-8px);
+    background: rgba(255,100,180,.1);
+    box-shadow: 0 15px 40px rgba(255,60,170,.15);
+}
+
+.reason span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.reason h3 {
+    color: #ffabd6;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.memory {
+    height: 230px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 20px;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.8),
+            transparent
+        ),
+        linear-gradient(135deg,#8d296f,#3d164d);
+    border: 1px solid rgba(255,255,255,.15);
+    transition: .4s;
+}
+
+.memory:hover {
+    transform: scale(1.03);
+}
+
+.memory-text {
+    position: relative;
+    z-index: 2;
+}
+
+.memory-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+}
+
+/* =========================
+   PROMISES
+========================= */
+
+.promise-list {
+    margin-top: 35px;
+    text-align: left;
+}
+
+.promise {
+    padding: 20px;
+    margin: 12px 0;
+    border-radius: 18px;
+    background: rgba(255,255,255,.05);
+    border-left: 3px solid #ff73b8;
+}
+
+.promise::first-letter {
+    color: #ff79bd;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    margin-top: 40px;
+    text-align: left;
+    border-left: 2px solid rgba(255,120,190,.4);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "♥";
+    position: absolute;
+    left: -47px;
+    top: 0;
+    color: #ff78bb;
+}
+
+.timeline-item h3 {
+    color: #ffabd7;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+}
+
+/*
